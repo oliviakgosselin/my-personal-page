@@ -1,0 +1,102 @@
+.main-container {
+    min-height: 100vh;
+    /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px;
+    /* height of your footer */
+}
+
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    height: 80px;
+    padding: 15px;
+    position: absolute;
+    right: 0px;
+    left: 0px;
+    top: 0px;
+    background-color: white;
+    border-bottom: black 1px solid;
+}
+
+.nav-item {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+}
+
+.nav-a {
+    font-size: 13px;
+    font-weight: 400;
+    cursor: pointer;
+    color: black;
+    transition: color 1s;
+    border-bottom: transparent;
+    padding-bottom: 2px;
+}
+
+.nav-a:-webkit-any-link {
+    text-decoration: none;
+}
+
+.nav-a:hover {
+    color: orange;
+}
+
+.active-link {
+    color: orange;
+}
+
+.name {
+    align-self: center;
+    flex-grow: 23;
+    font-size: 18px;
+    font-weight: bolder;
+    text-align: right;
+    letter-spacing: 4px;
+}
+
+.pages-container {
+    margin-top: 80px;
+}
+
+.footer {
+    background-color: #f2f2f2;
+    display: flex;
+    left: 0px;
+    position: absolute;
+    bottom: 0px;
+    flex-direction: row;
+    margin: 15px 0 0 0;
+    position: absolute;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    height: 75px;
+}
+
+#email-icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    flex-grow: 1;
+}
+
+#linkedin-icon {
+    width: 40px;
+    height: 40px;
+    align-self: center;
+    flex-grow: 1;
+}
+
+#copyright {
+    text-align: right;
+    font-size: 13px;
+    margin: 0 15px 0 15px;
+    flex-grow: 23;
+}

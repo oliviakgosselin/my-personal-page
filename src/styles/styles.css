@@ -1,0 +1,33 @@
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    /* background-color: rgb(228, 238, 240);*/
+    font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    height: 100%;
+    position: relative;
+    margin: 0px;
+}
+
+button {
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: white;
+    border: none;
+    font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    font-size: 11px;
+    outline: none;
+    cursor: pointer;
+}
+
+input {
+    border-radius: 3px;
+    border: none;
+    outline: none;
+    font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
+}

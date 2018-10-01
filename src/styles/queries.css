@@ -1,0 +1,53 @@
+/* Big tablet to 1200px */
+
+@media only screen and (max-width: 1200px) {}
+
+/* Small tablet to big tablet: from 768px to 1200px */
+
+@media only screen and (max-width: 1023px) {}
+
+/* Small phones to small tablets: from 418px to 767px */
+
+@media only screen and (max-width: 767px) {
+    /* Navigation */
+    .name {
+        order: 2 !important;
+        flex-grow: 2 !important;
+        order: -1 !important;
+    }
+    .nav {
+        flex-direction: column !important;
+        height: 130px !important;
+    }
+    .nav a {
+        padding-bottom: 0px !important;
+    }
+    .pages-container {
+        margin-top: 130px !important;
+    }
+    /* About Me */
+    .about-me-container {
+        flex-direction: column !important;
+        padding-top: 15px !important;
+        margin-bottom: 75px !important;
+    }
+    .about-me-summary {
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+    .profile-picture-container {
+        order: -1 !important;
+        align-self: center !important;
+        width: 50% !important;
+    }
+    .hello-message {
+        text-align: center !important;
+    }
+    .summary-message {
+        padding: 0px 0px 0px 0px !important;
+    }
+}
+
+/* Small phones: from 0px to 480px */
+
+@media only screen and (max-width: 480px) {}

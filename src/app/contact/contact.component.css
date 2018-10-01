@@ -1,0 +1,23 @@
+.contact-container {
+    margin: 0px 15px;
+}
+
+.contact-header {
+    font-size: 24px;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.grouped-form-item {
+    display: flex;
+    flex-direction: row;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+}
