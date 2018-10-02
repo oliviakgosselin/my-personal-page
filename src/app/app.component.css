@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: space-around;
     height: 80px;
-    padding: 15px;
+    padding: 15px 30px;
     position: absolute;
     right: 0px;
     left: 0px;
@@ -63,6 +63,7 @@
 
 .pages-container {
     margin-top: 80px;
+    padding: 0px 30px;
 }
 
 .footer {
@@ -72,12 +73,12 @@
     position: absolute;
     bottom: 0px;
     flex-direction: row;
-    margin: 15px 0 0 0;
     position: absolute;
     width: 100%;
     align-items: center;
     justify-content: space-between;
     height: 75px;
+    padding: 0px 30px;
 }
 
 #email-icon {
@@ -97,6 +98,6 @@
 #copyright {
     text-align: right;
     font-size: 13px;
-    margin: 0 15px 0 15px;
+    margin: 0px 30px;
     flex-grow: 23;
 }

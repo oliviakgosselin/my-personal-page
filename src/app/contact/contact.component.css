@@ -1,23 +1,60 @@
-.contact-container {
-    margin: 0px 15px;
+.contact-outer-container {}
+
+.contact-inner-container {
+    display: flex;
+    justify-content: space-between;
 }
 
 .contact-header {
     font-size: 24px;
+    padding-top: 15px;
+}
+
+.contact-picture-container {
+    width: 35%;
+    align-self: flex-end;
+}
+
+.contact-form-container {
+    width: 50%;
+    align-self: center;
+}
+
+.contact-picture {
+    max-width: 100%;
+    height: auto;
 }
 
 .contactForm {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-top: 30px;
 }
 
 .grouped-form-item {
     display: flex;
     flex-direction: row;
+    width: 70%;
+    justify-content: space-between;
 }
 
 .form-item {
     display: flex;
     flex-direction: column;
+    margin-top: 15px;
+}
+
+#submit-button {
+    margin-top: 30px;
+}
+
+#first {
+    flex-grow: 1;
+    margin-right: 5px;
+}
+
+#last {
+    flex-grow: 1;
+    margin-left: 5px;
 }
