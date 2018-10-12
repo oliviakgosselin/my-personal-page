@@ -17,17 +17,42 @@ html, body {
 button {
     padding: 5px 10px;
     border-radius: 3px;
-    background-color: white;
+    background-color: orange;
     border: none;
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
-    font-size: 11px;
+    font-size: 13px;
     outline: none;
     cursor: pointer;
+    color: white;
+    border: 2px solid orange;
+}
+
+button:hover {
+    background-color: darkorange;
+    border: 2px solid darkorange;
 }
 
 input {
-    border-radius: 3px;
     border: none;
     outline: none;
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    height: 28px;
+    text-indent: 4px;
+    background-color: #f2f2f2;
+}
+
+textarea {
+    border: none;
+    outline: none;
+    font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
+    text-indent: 4px;
+    background-color: #f2f2f2;
+    resize: none;
+    padding: 4px;
+    height: 185px
+}
+
+label {
+    font-size: 13px;
+    margin-bottom: 3px;
 }

@@ -46,8 +46,26 @@
     .summary-message {
         padding: 0px 0px 0px 0px !important;
     }
+    /* Contact Me */
+    .contact-header {
+        text-align: center !important;
+    }
+    .contact-inner-container {
+        flex-direction: column !important;
+    }
+    .contact-picture-container {
+        width: 50% !important;
+        align-self: center !important;
+    }
+    .contact-form-container {
+        width: 100% !important;
+    }
 }
 
 /* Small phones: from 0px to 480px */
 
-@media only screen and (max-width: 480px) {}
+@media only screen and (max-width: 480px) {
+    #copyright {
+        margin: 0px 0px 0px 30px !important;
+    }
+}

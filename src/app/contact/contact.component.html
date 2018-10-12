@@ -1,33 +1,41 @@
-<div class="contact-container">
+<div class="contact-outer-container">
   <div class="contact-header">Let's Work Together</div>
 
-  <div formGroupName="contactForm" class="contactForm">
-    <div class="grouped-form-item">
-      <div class="form-item">
-        <label for="firstName">First Name</label>
-        <input type="text" id="firstName" formControlName="firstName">
+  <div class="contact-inner-container">
+    <div class="contact-picture-container">
+      <img class="contact-picture" src="../assets/profile-picture.jpg" alt="Image of Olivia Gosselin" />
+    </div>
+    <div class="contact-form-container">
+      <div formGroupName="contactForm" class="contactForm">
+        <div class="grouped-form-item">
+          <div class="form-item" id="first">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" formControlName="firstName">
+          </div>
+
+          <div class="form-item" id="last">
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" formControlName="lastName">
+          </div>
+        </div>
+        <div class="form-item">
+          <label for="email">Email Address</label>
+          <input type="text" id="email" formControlName="email">
+        </div>
+
+        <div class="form-item">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" formControlName="subject">
+        </div>
+
+        <div class="form-item">
+          <label for="message">Message</label>
+          <textarea id="message" formControlName="message"></textarea>
+        </div>
+
       </div>
-
-      <div class="form-item">
-        <label for="lastName">Last Name</label>
-        <input type="text" id="lastName" formControlName="lastName">
-      </div>
-    </div>
-    <div class="form-item">
-      <label for="email">Email Address</label>
-      <input type="text" id="email" formControlName="email">
-    </div>
-
-    <div class="form-item">
-      <label for="subject">Subject</label>
-      <input type="text" id="subject" formControlName="subject">
-    </div>
-
-    <div class="form-item">
-      <label for="message">Message</label>
-      <input type="text" id="message" formControlName="message">
+      <button type="submit" id="submit-button">Submit</button>
     </div>
 
   </div>
-  <button type="submit">Submit</button>
 </div>
