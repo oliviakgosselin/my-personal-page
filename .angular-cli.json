@@ -15,7 +15,12 @@
       "tsconfig": "tsconfig.app.json",
       "testTsconfig": "tsconfig.spec.json",
       "prefix": "app",
-      "styles": ["styles/styles.css", "styles/queries.css"],
+      "styles": ["styles/styles.scss", "styles/queries.scss"],
+      "stylePreprocessorOptions": {
+        "includePaths": [
+          "../node_modules/bootstrap/scss"
+        ]
+      },
       "scripts": [],
       "environmentSource": "environments/environment.ts",
       "environments": {
@@ -49,7 +54,7 @@
     }
   },
   "defaults": {
-    "styleExt": "css",
+    "styleExt": "scss",
     "component": {}
   }
 }

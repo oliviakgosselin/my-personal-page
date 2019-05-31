@@ -1,3 +1,5 @@
+@import 'variables.scss';
+
 * {
     box-sizing: border-box;
 }
@@ -7,7 +9,6 @@
 }
 
 html, body {
-    /* background-color: rgb(228, 238, 240);*/
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
     height: 100%;
     position: relative;
@@ -17,19 +18,19 @@ html, body {
 button {
     padding: 5px 10px;
     border-radius: 3px;
-    background-color: orange;
+    background-color: $orange-color;
     border: none;
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
     font-size: 13px;
     outline: none;
     cursor: pointer;
-    color: white;
+    color: $white-color;
     border: 2px solid orange;
 }
 
 button:hover {
-    background-color: darkorange;
-    border: 2px solid darkorange;
+    background-color: $dark-orange-color;
+    border: 2px solid $dark-orange-color;
 }
 
 input {
@@ -38,7 +39,7 @@ input {
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
     height: 28px;
     text-indent: 4px;
-    background-color: #f2f2f2;
+    background-color: $light-gray-color;
 }
 
 textarea {
@@ -46,7 +47,7 @@ textarea {
     outline: none;
     font-family: "Varela", "HelveticaNeue", "Helvetica Neue", sans-serif;
     text-indent: 4px;
-    background-color: #f2f2f2;
+    background-color: $light-gray-color;
     resize: none;
     padding: 4px;
     height: 185px

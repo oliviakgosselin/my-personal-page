@@ -1,0 +1,27 @@
+.blog-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+#blog-container-margin {
+    margin: 0px 300px;
+}
+
+.coming-soon-message {}
+
+.date {
+    margin-top: 0px;
+    font-size: 12px;
+}
+
+.blog-header {
+    font-size: 24px;
+    padding-top: 15px;
+    margin: 0px;
+}
+
+.blog-content {
+    font-size: 13px;
+}

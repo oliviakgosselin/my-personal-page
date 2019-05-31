@@ -1,9 +1,0 @@
-.blog-container {
-    height: 600px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-}
-
-.coming-soon-message {}

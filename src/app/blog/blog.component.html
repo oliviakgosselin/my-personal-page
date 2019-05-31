@@ -1,5 +1,144 @@
-<div class="blog-container">
-  <p class="coming-soon-message">
-    Blog coming soon...
-  </p>
+<div class="blog-container" id="blog-container-margin">
+  <article>
+    <header>
+      <h1 class="blog-header">Demystifying RxJS</h1>
+      <p class="date"> September 13, 2018</p>
+    </header>
+
+    <div class="blog-content">
+      <p>
+        In my first few years learning Angular, observables freaked me out. In fact, every chance I had, I'd hide from
+        the
+        word observable whether it was in conversation with my development counterpart or coming across the word in a
+        Medium article. As a novice Angular developer, I knew this was a fear that I would have to overcome if I wanted
+        to
+        someday call myself a highly skilled front end developer. Considering observables are at the core of reactive
+        programming, I thought what better way to understand observables than to describe this paradigm in my own
+        words…
+      </p>
+
+      <p>
+        At a high-level, Angular comes packaged with a reactive programming library called RxJS (Reactive Extensions
+        for
+        JavaScript). This library relies heavily on observables to program with asynchronous data. There are five main
+        concepts employed by this library that are important to understand early on: observable, observer,
+        subscription,
+        operators, and subject.
+      </p>
+
+      <p>
+        Observable<br>
+        An observable is representational of a stream of data that can be operated on. Observables are declarative in
+        that
+        observable data is not available until a consumer subscribes to it.
+      </p>
+
+      <p>
+        Observer<br>
+        An observer consumes the data published by an observable.
+      </p>
+
+      <p>
+        Subscription<br>
+        A subscription is a method that calls an observable like a function and passes in an observer that listens to
+        the
+        stream of data published by the observable.</p>
+
+      <p>
+        Operators<br>
+        An operator is a function that is applied to an observable.</p>
+
+      <p>
+        Subject<br>
+        A subject is both an observable and an observer. In other words, a subject can be subscribed to as well as emit
+        data to its subscribers.
+      </p>
+
+      <p>
+        The combination of these five concepts are used to implement a software design pattern called the observer
+        pattern.
+        According to Design Patterns Explained Simply, the observer pattern is a one-to-many dependency between objects
+        so
+        that when one object changes state, all its dependents are notified and updated automatically. In order to see
+        this
+        through programmatically, I will build an observable data service in Angular. An observable data service
+        exposes
+        a
+        public observable to which consumers can subscribe. Using dependency injection, the service can be injected
+        into
+        any application component that requires the observable data.
+      </p>
+      <p>
+        Stateless-book.service.ts
+        <gh-gist src="https://gist.github.com/oliviakg/1dcfc2312e4dd9bf148f94801215a55d.js?file=stateless-book.service.ts"></gh-gist>
+      </p>
+      <p>
+        Stateless-book.component.ts
+        <gh-gist src="https://gist.github.com/oliviakg/9cc1e368b8aec8fdbb8e04e1a51939b0.js?file=stateless-book.component.ts"></gh-gist>
+      </p>
+      <p>
+
+        In the example code above, there is a stateless book service with a getBooks() method that makes a get request
+        via
+        http and returns an observable of an array of books. The component injects the book service dependency in the
+        constructor to access methods on the book service. In order to fetch the list of books, the component invokes
+        the
+        book service’s getBooks() method and assigns the returned observable to a local observable property.
+      </p>
+      <p>
+        If implemented by way of the observer pattern, observable data services ensure that parts of the application
+        interact in a decoupled way. In other words, subscribers are not aware where the data is coming from and
+        broadcasters are not aware to who they are broadcasting. A behavior subject can be used to enforce this idea
+        that
+        a
+        service owns all aspects of the data model. A behavior subject is very similar to a subject with the added
+        bonus
+        of
+        being able to hold an initial value. By assigning the service private ownership of this behavior subject and
+        exposing this subject as a public observable, outside resources are effectively prevented from emitting values
+        on
+        behalf of the service, thus, achieving abstraction. In order to manipulate the data stored in the service, the
+        consumer can call an action method on the service. Depending on the action method called, the data service then
+        broadcasts the new data to all of its subscribers.
+      </p>
+
+      <p>
+        Stateful-book.service.ts
+        <gh-gist src="https://gist.github.com/oliviakg/20892b49f102e7ad6061e41816c90c1f.js?file=stateful-book.service.ts"></gh-gist>
+      </p>
+      <p>
+        Stateful-book.component.ts
+        <gh-gist src="https://gist.github.com/oliviakg/63da2b9bb423806c73cca87025dfd84f.js?file=stateful-book.component.ts"></gh-gist>
+
+      </p>
+
+      <p>
+        In the example code above, I introduced two state properties on the service : a public observable and a private
+        behavior subject. The behavior subject is initialized to an empty array and is strongly typed to an array of
+        Book
+        objects. The observable, on the other hand, publicly exposes the behavior subject as an observable with the
+        asObseravable() operator. This way, those subscribing to the books$ observable cannot emit values on behalf of
+        the
+        service itself. Rather, they must call an action method on the service, such as addBook(), and hand off data
+        manipulation to the service. The service can then broadcast the new data to the subscribers using the behavior
+        subject’s next() method.
+      </p>
+
+      <p>
+        This goal of this article was to summarize reactive programming in an easily digestible format. In my mind,
+        reactive programming is built around the notion of observables or streams of data. Observables are put into
+        practice with the implementation of observable data services. In order to ensure code is maintainable,
+        efficient,
+        and not too complex, observable data services adhere are built using the observer pattern.
+
+      </p>
+
+      <p>
+        With this foundation now in place, I welcome conversations around observables and look forward to collaborating
+        effectively with developers on reactive programming projects.
+
+      </p>
+    </div>
+  </article>
+
 </div>

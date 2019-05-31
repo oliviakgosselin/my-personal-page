@@ -1,3 +1,5 @@
+@import '../styles/variables.scss';
+
 .main-container {
     min-height: 100vh;
     /* will cover the 100% of viewport */
@@ -20,8 +22,8 @@
     right: 0px;
     left: 0px;
     top: 0px;
-    background-color: white;
-    border-bottom: black 1px solid;
+    background-color: $white-color;
+    border-bottom: $black-color 1px solid;
 }
 
 .nav-item {
@@ -34,7 +36,7 @@
     font-size: 13px;
     font-weight: 400;
     cursor: pointer;
-    color: black;
+    color: $black-color;
     transition: color 1s;
     border-bottom: transparent;
     padding-bottom: 2px;
@@ -45,11 +47,11 @@
 }
 
 .nav-a:hover {
-    color: orange;
+    color: $orange-color;
 }
 
 .active-link {
-    color: orange;
+    color: $orange-color;
 }
 
 .name {
@@ -67,7 +69,7 @@
 }
 
 .footer {
-    background-color: #f2f2f2;
+    background-color: $light-gray-color;
     display: flex;
     left: 0px;
     position: absolute;
