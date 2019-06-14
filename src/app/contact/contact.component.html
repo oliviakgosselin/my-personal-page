@@ -8,33 +8,49 @@
     <div class="contact-form-container">
       <div [formGroup]="contactForm" class="contactForm">
         <div class="grouped-form-item">
-          <div class="form-item" id="first">
+          <div class="form-item form-item--input-ctn" id="first">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" formControlName="firstName">
+            <input type="text" class="form-item__input" 
+            [class.form-item__input--valid]="contactForm.controls.firstName.valid"
+            [class.form-item__input--invalid]="contactForm.controls.firstName.dirty && contactForm.controls.firstName.errors?.required" formControlName="firstName">
+            <span class="form-item__error" *ngIf="contactForm.controls.firstName.dirty && contactForm.controls.firstName.errors?.required">First Name is required.</span>
           </div>
 
-          <div class="form-item" id="last">
+          <div class="form-item form-item--input-ctn" id="last">
             <label for="lastName">Last Name</label>
-            <input type="text" id="lastName" formControlName="lastName">
+            <input type="text" class="form-item__input"
+            [class.form-item__input--valid]="contactForm.controls.lastName.valid"
+            [class.form-item__input--invalid]="contactForm.controls.lastName.dirty && contactForm.controls.lastName.errors?.required" formControlName="lastName">
+            <span class="form-item__error" *ngIf="contactForm.controls.lastName.dirty && contactForm.controls.lastName.errors?.required">Last Name is required.</span>
           </div>
         </div>
-        <div class="form-item">
-          <label for="email">Email Address</label>
-          <input type="text" id="email" formControlName="email">
+        <div class="form-item form-item--input-ctn">
+          <label for="email">Email</label>
+          <input type="text" class="form-item__input"
+          [class.form-item__input--valid]="contactForm.controls.email.valid" 
+          [class.form-item__input--invalid]="contactForm.controls.email.dirty && contactForm.controls.email.errors" formControlName="email">
+          <span class="form-item__error" *ngIf="contactForm.controls.email.dirty && contactForm.controls.email.errors?.required">Email is required.</span>
+          <span class="form-item__error" *ngIf="contactForm.controls.email.value && contactForm.controls.email.errors?.email">Email must be a valid email address.</span>
         </div>
 
-        <div class="form-item">
+        <div class="form-item form-item--input-ctn">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" formControlName="subject">
+          <input type="text" class="form-item__input"
+          [class.form-item__input--valid]="contactForm.controls.subject.valid"
+          [class.form-item__input--invalid]="contactForm.controls.subject.dirty && contactForm.controls.subject.errors?.required" formControlName="subject">
+          <span class="form-item__error" *ngIf="contactForm.controls.subject.dirty && contactForm.controls.subject.errors?.required">Subject is required.</span>
         </div>
 
-        <div class="form-item">
+        <div class="form-item form-item--textarea-ctn">
           <label for="message">Message</label>
-          <textarea id="message" formControlName="message"></textarea>
+          <textarea class="form-item__input"
+          [class.form-item__input--valid]="contactForm.controls.message.valid"
+          [class.form-item__input--invalid]="contactForm.controls.message.dirty && contactForm.controls.message.errors?.required" formControlName="message"></textarea>
+          <span class="form-item__error" *ngIf="contactForm.controls.message.dirty && contactForm.controls.message.errors?.required">Message is required.</span>
         </div>
 
       </div>
-      <button type="submit" id="submit-button">Submit</button>
+      <button type="submit" class="green-btn" id="submit-button" [disabled]="!contactForm.valid" (click)="sendEmail()">Submit</button>
     </div>
 
   </div>

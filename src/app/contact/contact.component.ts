@@ -24,9 +24,17 @@ export class ContactComponent implements OnInit {
     });
   }
 
-  get firstName () { return this.contactForm.get('firstName'); }
   get lastName () { return this.contactForm.get('lastName'); }
   get email () { return this.contactForm.get('email'); }
   get subject () { return this.contactForm.get('subject'); }
   get message () { return this.contactForm.get('message'); }
+
+  sendEmail(): void {
+    console.log(this.contactForm.getRawValue());
+
+    // on success clear form
+    this.contactForm.reset();
+
+    // on error
+  }
 }

@@ -10,10 +10,10 @@ const routes: Routes = [
     path: 'blog',
     loadChildren: './blog/blog.module#BlogModule'
   },
-  {
-    path: 'projects',
-    loadChildren: './projects/projects.module#ProjectsModule'
-  },
+  // {
+  //   path: 'projects',
+  //   loadChildren: './projects/projects.module#ProjectsModule'
+  // },
   {
     path: 'contact',
     loadChildren: './contact/contact.module#ContactModule'
