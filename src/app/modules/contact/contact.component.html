@@ -3,10 +3,14 @@
 
   <div class="contact-inner-container">
     <div class="contact-picture-container">
-      <img class="contact-picture" src="../assets/profile-picture.jpg" alt="Image of Olivia Gosselin" />
+      <img class="contact-picture" src="../assets/desk-picture.jpg" alt="Image of Olivia Gosselin" />
     </div>
     <div class="contact-form-container">
-      <div [formGroup]="contactForm" class="contactForm">
+      <div class="message-ctn">
+            <div @myInsertRemoveTrigger class="message-ctn__message message-ctn__message--success" *ngIf="submissionResponse === 'success'">Thank you! Your form was submitted successfully. </div>
+            <div @myInsertRemoveTrigger class="message-ctn__message message-ctn__message--error" *ngIf="submissionResponse === 'error'">There were some problems with your form submission. Please try again. </div>
+      </div>
+      <div [formGroup]="contactForm" class="contact-form">
         <div class="grouped-form-item">
           <div class="form-item form-item--input-ctn" id="first">
             <label for="firstName">First Name</label>
@@ -50,7 +54,7 @@
         </div>
 
       </div>
-      <button type="submit" class="green-btn" id="submit-button" [disabled]="!contactForm.valid" (click)="sendEmail()">Submit</button>
+      <button type="submit" [class.green-btn--loading]="isLoading" class="green-btn" id="submit-button" [disabled]="!contactForm.valid" (click)="sendEmail()">{{ isLoading ? '' : 'Submit'}}</button>
     </div>
 
   </div>
